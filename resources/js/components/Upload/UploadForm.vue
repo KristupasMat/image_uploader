@@ -3,7 +3,7 @@
         <input type="hidden" name="_token" :value="csrf">
         <div class="form__group">
             <label for="image">Browse</label>
-            <input type="file" ref="selectImage" name="image" class="inputFile" @change="previewFiles">
+            <input type="file" accept="file_extension|image/*" ref="selectImage" name="image" class="inputFile" @change="previewFiles">
         </div>
         <p> or </p>
         <div class="form__group form__group--capture">
@@ -45,7 +45,6 @@
         },
         computed: {
             disableSubmit() {
-                console.log(this.fileSelected)
                 return !this.capturedImage && !this.fileSelected;
             },
             getUserMediaSupported() {
