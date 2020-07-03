@@ -1,7 +1,7 @@
 # Image Uploader
 <p>Trumpas aprašymas, kaip paleisti projecktą:</p>
 
-1. Clone the repository: `git clone https://github.com/KristupasMat/image_uploader.git`
+1. Clone the repository: `git clone https://github.com/KristupasMat/image_uploader.git` and cd to: `cd image_uploader`
 2. Create `.env` file at your root directory. Copy/Paste from `.env.example`
 3. Run `php artisan key:generate`
 4. Run `touch database/database.sqlite` 
