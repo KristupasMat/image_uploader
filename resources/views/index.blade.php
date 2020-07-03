@@ -26,7 +26,7 @@
                     @endforeach
                 </section>
             @endif
-            @if (count($images) > 9)
+            @if (count($images) > 0)
                 <div class="pagination">
                     {{ $images->links() }}
                 </div>
