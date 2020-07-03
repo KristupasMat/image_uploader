@@ -1,0 +1,201 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;
+
+400;900&display=swap);html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  width: 120px;
+  padding: 15px;
+  background-color: #6574cd;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+}
+
+button:disabled {
+  background-color: #C0C0C0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  padding: 0 10px;
+  max-width: 1400px;
+  margin: 35px auto;
+}
+
+.container .image {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 2px 5px #8080806e;
+  cursor: pointer;
+}
+
+.container .image .image__img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .image .image__caption {
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 15px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .header__title {
+  font-weight: 300;
+}
+
+.header .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.header .overlay .image__overlay--wrappper {
+  margin-top: 15px;
+  height: 75vh;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header .overlay .image__overlay--wrappper .image__img {
+  max-height: 100%;
+}
+
+.header .overlay .image__overlay--wrappper .image__caption {
+  text-align: center;
+  background-color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 15px;
+}
+
+.header .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .form p {
+  margin: 0;
+}
+
+.header .form .warning {
+  margin: 10px;
+  color: #e3342f;
+}
+
+.header .form .form__group {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+}
+
+.header .form .form__group label {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.header .form .form__group input {
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #6574cd;
+}
+
+.header .form .form__group--capture {
+  align-items: center;
+}
+
+.header .form .form__group--capture p {
+  text-align: ce;
+}
+
+.header .form .form__group--caption {
+  align-self: stretch;
+}
+
+.header .form .form__image {
+  height: 250px;
+}
+
+.pagination {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.pagination nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination nav ul li {
+  margin: 5px;
+  border-radius: 2px;
+  background-color: #6574cd;
+}
+
+.pagination nav ul li a,
+.pagination nav ul li span {
+  padding: 8px 16px;
+  display: inline-block;
+  color: white;
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+@media only screen and (max-width: 567px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .header .overlay .image__overlay--wrappper {
+    min-width: 280px;
+    height: 50vh;
+  }
+
+  .header .form .form__image {
+    height: 200px;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+@media only screen and (min-width: 568px) and (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+

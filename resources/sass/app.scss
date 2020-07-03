@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+@import 'variables';
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: $body-bg;
+    font-family: $font-family;
+}
+
+button {
+    cursor: pointer;
+    width: 120px;
+    padding: 15px;
+    background-color: $indigo;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    &:disabled {
+        background-color: $grey;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    padding: 0 10px;
+    max-width: 1400px;
+    margin: 35px auto;
+
+    .image {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 1px 2px 5px #8080806e;
+        cursor: pointer;
+        .image__img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .image__caption {
+            font-size: $font-size-base;
+            font-weight: 900;
+            padding: 15px;
+        }
+    }
+
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header__title {
+        font-weight: 300;
+    }
+    .overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.7);
+        z-index: 2;
+        cursor: pointer;
+
+        .image__overlay--wrappper {
+            margin-top: 15px;
+            height: 75vh;
+            max-width: 90vw;
+            display: flex;
+            flex-direction: column;
+            .image__img {
+                max-height:100%;
+            }
+            .image__caption {
+                text-align: center;
+                background-color: $body-bg;
+                font-size: $font-size-base;
+                font-weight: 900;
+                padding: 15px;
+            }
+        }
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            margin: 0;
+        }
+        .warning {
+            margin: 10px;
+            color: $red;
+        }
+        .form__group {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            font-weight: 100;
+
+            label {
+                margin-bottom: 5px;
+                font-size: $font-size-big;
+            }
+            input {
+                padding: 10px;
+                border-radius: 2px;
+                border: 1px solid $indigo;
+            }
+        }
+        .form__group--capture {
+            align-items: center;
+            p {
+                text-align: ce;
+            }
+        }
+        .form__group--caption {
+            align-self: stretch;
+        }
+        .form__image {
+            height: 250px;
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+
+    nav {
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 5px;
+                border-radius: 2px;
+                background-color: $indigo;
+
+                a, span {
+                    padding: 8px 16px;
+                    display: inline-block;
+                    color: white;
+                }
+            }
+
+        }
+    }
+}
+
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+@media only screen and (max-width: 567px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .header {
+
+        .overlay {
+
+            .image__overlay--wrappper {
+                min-width: 280px;
+                height: 50vh;
+            }
+        }
+        .form {
+            .form__image {
+                height: 200px;
+            }
+        }
+    }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+@media only screen and (min-width: 568px) and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
